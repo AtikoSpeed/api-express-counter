@@ -7,7 +7,6 @@ const cors = require("cors");
 
 //Create a new express application
 const app = express();
-app.use(express.static("public"));
 
 //Tell express we want to use the morgan library
 app.use(morgan("dev"));
