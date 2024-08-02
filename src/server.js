@@ -28,16 +28,16 @@ app.delete("/counter", function (req, res) {
 
 app.post("/counter/increment", function (req, res) {
   data.counter++;
-  res.json(data);
+  res.status(201).json(data);
 });
 app.post("/counter/decrement", function (req, res) {
   data.counter--;
-  res.json(data);
+  res.status(201).json(data);
 });
 
 app.post("/counter/double", function (req, res) {
   data.counter = data.counter * 2;
-  res.json(data);
+  res.status(201).json(data);
 });
 
 app.put("/counter", function (req, res) {
@@ -45,7 +45,7 @@ app.put("/counter", function (req, res) {
   console.log(value);
   if (!isNaN(value)) {
     data.counter = value;
-    res.json(data);
+    res.status(201).json(data);
   } else {
     res.status(418).json("invalid");
   }
